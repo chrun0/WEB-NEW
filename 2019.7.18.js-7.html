@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>葡萄藤PPT</title>
+
+    <link rel="stylesheet" href="https://ptteng.github.io/PPT/css/reveal/reveal.css">
+
+    <!-- PPT主题，可以在/css/reveal/theme/中选择其他主题，目前暂时只能使用该模板 -->
+    <link rel="stylesheet" href="https://ptteng.github.io/PPT/css/reveal/theme/ptt.css">
+
+    <!-- syntax highlighting 代码高亮主题 -->
+    <link rel="stylesheet" href="https://ptteng.github.io/PPT/lib/reveal/css/zenburn.css">
+
+    <style>
+        .float {
+            float: left;
+        }
+
+        p.font {
+            text-align: left;
+        }
+    </style>
+
+
+    <!-- 打印和PDF输出样式 -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ?
+            'https://ptteng.github.io/PPT/css/reveal/print/pdf.css' : '../css/reveal/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+<img src="img/2018-11-16-A-css01/logo.png" alt="" usemap="#pttmap" class="base-logo" style="visibility: hidden">
+<map name="pttmap">
+    <area shape="rect" coords="0,0,276,58" href="http://www.jnshu.com/" alt="" target="_blank">
+</map>
+<div class="reveal slide center" role="application" data-transition-speed="default" data-background-transition="fade">
+    <div class="slides" style="width: 960px; height: 700px; left: 50%; top: 50%; bottom: auto; right: auto; transform: translate(-50%, -50%) scale(0.794571);">
+        <section class="present" style="top: 234px; display: block;">
+            <h3>【js-task-7】 angualr控制器是什么？</h3>
+
+            <p style="text-align: center;">分享人：崔浩然</p>
+
+        </section>
+        <section class="future" style="top: 3px; display: block;" hidden="" aria-hidden="true">
+            <p>目录</p>
+            <p>1. 背景介绍</p>
+            <p>2. 知识剖析</p>
+            <p>3. 常见问题</p>
+            <p>4. 解决方案</p>
+            <p>5. 编码实战</p>
+            <p>6. 扩展思考</p>
+            <p>7. 参考文献</p>
+            <p>8. 更多讨论</p>
+        </section>
+        <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
+            <h3>一、背景介绍</h3>
+        </section>
+        <section class="future" style="top: 190px; display: none;" hidden="" aria-hidden="true">
+            <p>了解控制器之前，我们先来了解一下什么是MVVM模式。MVVM模式是Model-View-ViewMode（模型-视图-视图模型）模式的简称。</p>
+            <p> 在angular中MVVM模式主要分为四部分：</p>
+            <p> View：它专注于界面的显示和渲染，在angular中则是包含一堆声明式Directive的视图模板。</p>
+            <p>            ViewModel：它是View和Model的粘合体，负责View和Model的交互和协作，
+                它负责给View提供显示的数据，以及提供了View中Command事件操作Model的途径；在angular中$scope对象充当了这个ViewModel的角色；</p>
+        </section>
+        <section class="future" style="top: 190px; display: none;" hidden="" aria-hidden="true">
+            <p>                Model：它是与应用程序的业务逻辑相关的数据的封装载体，它是业务领域的对象，Model并不关心会被如何显示或操作，所以模型也不会包含任何界面显示相关的逻辑。
+                在web页面中，大部分Model都是来自Ajax的服务端返回数据或者是全局的配置对象；
+                而angular中的service则是封装和处理这些与Model相关的业务逻辑的场所，这类的业务服务是可以被多个Controller或者其他service复用的领域服务。</p>
+            <p>                Controller：这并不是MVVM模式的核心元素，但它负责ViewModel对象的初始化，它将组合一个或者多个service来获取业务领域Model放在ViewModel对象上，
+                使得应用界面在启动加载的时候达到一种可用的状态。</p>
+        </section>
+        <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+            <h3>二、知识剖析</h3>
+        </section>
+        <section class="future" style="top: 188px; display: none;" hidden="" aria-hidden="true">
+            <p>什么是controller？</p>
+        </section>
+        <section class="future" style="top: 188px; display: none;" hidden="" aria-hidden="true">
+            <p>AngularJS 控制器是常规的 JavaScript 对象。AngularJS 控制器 控制 AngularJS 应用程序的数据。在angularJS中，
+                controller是一个javascript函数/类，用于操作作用域中，各个对象的初始状态以及相应的行为。</p>
+            <p>也就是说，在HTML中，绑定ng-controller的那个DOM节点内的所有子标签，将会是当前controller的作用域。
+                在大型项目中,如果HTML DOM 中有多个作用域，这时你就需要知道你使用的 scope 对应的作用域是哪一个。</p>
+            <p>angularJS中view层解析是通过controller的作用域来将$scope对象解析成相应的内容，因此我们可以在同一个界面上划分不同的模块，
+                通过不同的控制器控制不同的模块来进行开发，这样通过划分模块的开发方式，对今后维护代码带来了便利。</p>
+        </section>
+        <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+            <h3>三、常见问题</h3>
+        </section>
+        <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+            <p>如何在多个controller中进行信息的沟通？</p>
+        </section>
+        <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+            <h3>四、解决办法</h3>
+        </section>
+        <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+            <p>方法一：利用作用域继承的原理，子控制器访问父级控制器中的内容。</p>
+            <p> 方法二：异步回调响应式通信—事件机制(或消息机制)。</p>
+            <p>方法三：使用service服务进行数据传输。</p>
+        </section>
+        <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+            <h3>五、编码实战</h3>
+        </section>
+        <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+            <h3>六、拓展思考</h3>
+        </section>
+        <section class="future" style="top: 97.5px; display: none;" hidden="" aria-hidden="true">
+            <h4> 在多个controller中进行信息的沟通还有哪些？</h4>
+        </section>
+        <section class="future" style="top: 97.5px; display: none;" hidden="" aria-hidden="true">
+            <h2>1.$rootscope</h2>
+            <p>大家都知道$scope是html和单个controller之间的桥梁，数据绑定就靠他了。而$rootscope可以被认为是全局$scope, 在各个controller里面都可以显示，也都可以修改。</p>
+            <p>优点: 简单易懂 缺点: 全局变量污染</p>
+        </section>
+        <section class="future" style="top: 97.5px; display: none;" hidden="" aria-hidden="true">
+            <h2> 2.作用域继承</h2>
+            <p> 作用域嵌套带来的父子作用域的继承关系也可以算是一种父子作用域之间的通信方式。</p>
+            <p>优点: 对于从祖先到子孙的数据传递效果很好</p>
+            <p>缺点: 从子孙到祖先的数据传递效果不好，子 Scope 的属性会隐藏（覆盖）了父 Scope 中的同名属性，对子 Scope 属性的更改并不更新父 Scope同名属性的值。（这个行为实际上不是 AngularJS 特有的，JavaScript 本身的原型链就是这样工作的。） 不能进行兄弟作用域的数据传递，除非用一个共同祖先，例如$rootScope 调用祖先函数意味着祖先与子孙之间的紧密耦合，当程序复杂到一定程度时修改起来会导致牵一发动全身的悲惨结局</p>
+        </section>
+        <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+            <h3>七、参考文献</h3>
+        </section>
+        <section class="future" style="top: 178px; display: none;" hidden="" aria-hidden="true">
+            <p>参考一：<a href="https://blog.csdn.net/lai_xu/article/details/49612915">不同controller作用域之间通信的方式</a></p><br>
+            <p>参考二： <a href="https://www.tuicool.com/articles/InuMF3J">angularJS的controller之间如何正确的通信</a></p><br>
+
+        </section>
+        <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+            <h3>八、更多讨论</h3>
+        </section>
+        <section class="future" style="top: 202.5px; display: none;" hidden="" aria-hidden="true">
+            <h3>感谢观看</h3>
+        </section>
+    </div>
+    <div class="backgrounds"><div class="slide-background present" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div></div><div class="progress" style="display: block;"><span style="width: 0px;"></span></div><aside class="controls" style="display: block;"><button class="navigate-left" aria-label="previous slide"></button><button class="navigate-right enabled" aria-label="next slide"></button><button class="navigate-up" aria-label="above slide"></button><button class="navigate-down" aria-label="below slide"></button></aside><div class="slide-number" style="display: none;"></div><div class="speaker-notes" data-prevent-swipe=""></div><div class="pause-overlay"></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">
+    【js-task-7】 angualr控制器是什么？
+
+    分享人：崔浩然
+</div></div>
+<script src="https://ptteng.github.io/PPT/lib/reveal/js/head.min.js"></script>
+<script src="https://ptteng.github.io/PPT/lib/reveal/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        history: true,
+        dependencies: [{
+            src: 'https://ptteng.github.io/PPT/plugin/markdown/marked.js'
+        },
+            {
+                src: 'https://ptteng.github.io/PPT/plugin/markdown/markdown.js'
+            },
+            {
+                src: 'https://ptteng.github.io/PPT/plugin/notes/notes.js',
+                async: true
+            },
+            {
+                src: 'https://ptteng.github.io/PPT/plugin/highlight/highlight.js',
+                async: true,
+                callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+</script>
+
+</body></html>
